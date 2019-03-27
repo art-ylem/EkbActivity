@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:background="@color/background_gray">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:layout_constraintTop_toTopOf="parent"
+        card_view:cardBackgroundColor="@color/box_back"
+        card_view:cardCornerRadius="3dp"
+        card_view:cardElevation="5dp"
+        card_view:cardUseCompatPadding="true"
+        >
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"    >
+
+            <ImageView
+                android:id="@+id/news_box_img"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:src="@drawable/box_img"
+                card_view:layout_constraintTop_toTopOf="parent"
+                android:scaleType="centerCrop"
+
+                />
+
+            <ImageView
+                android:id="@+id/ic_more"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_more"
+                card_view:layout_constraintTop_toTopOf="@id/news_box_img"
+                card_view:layout_constraintEnd_toEndOf="@id/news_box_img"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                />
+
+            <ImageView
+                android:id="@+id/ic_like"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_like"
+                card_view:layout_constraintTop_toTopOf="@id/news_box_img"
+                card_view:layout_constraintEnd_toEndOf="@id/news_box_img"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="60dp"
+                />
+
+            <TextView
+                android:id="@+id/img_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/img_text1"
+                android:fontFamily="sans-serif"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                card_view:layout_constraintStart_toStartOf="@id/news_box_img"
+                card_view:layout_constraintBottom_toBottomOf="@id/news_box_img"
+                android:layout_marginBottom="45dp"
+                android:layout_marginStart="10dp"
+                />
+
+            <TextView
+                android:id="@+id/img_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/img_text2"
+                android:fontFamily="sans-serif"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                card_view:layout_constraintStart_toStartOf="@id/news_box_img"
+                card_view:layout_constraintBottom_toBottomOf="@id/news_box_img"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="10dp"
+
+                />
+            <TextView
+                android:id="@+id/img_picture_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/img_pic_count"
+                android:fontFamily="sans-serif"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                card_view:layout_constraintEnd_toEndOf="@id/news_box_img"
+                card_view:layout_constraintBottom_toBottomOf="@id/news_box_img"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="10dp"
+                />
+
+
+
+            <TextView
+                android:id="@+id/text_under_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_under_img"
+                android:fontFamily="sans-serif"
+                android:textSize="16sp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:paddingStart="15dp"
+                android:textColor="@color/black"
+                android:background="@color/back_orange"
+                card_view:layout_constraintTop_toBottomOf="@id/news_box_img"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/price_text"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif"
+                android:textSize="20sp"
+                android:paddingTop="15dp"
+                android:paddingBottom="10dp"
+                android:paddingStart="20dp"
+                card_view:layout_constraintTop_toBottomOf="@id/text_under_img"
+                android:textStyle="bold"
+                card_view:layout_constraintStart_toStartOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/ic_shield"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_shield"
+                android:layout_marginEnd="60dp"
+                android:layout_marginTop="5dp"
+                card_view:layout_constraintTop_toBottomOf="@id/text_under_img"
+                card_view:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/text_pro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/pro_text"
+                android:fontFamily="sans-serif"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                card_view:layout_constraintTop_toBottomOf="@id/text_under_img"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/rounded_corner"
+                />
+
+            <TextView
+                android:id="@+id/text_under_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/under_price_count"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif"
+                android:textSize="18sp"
+                android:paddingBottom="10dp"
+                android:paddingStart="20dp"
+                card_view:layout_constraintTop_toBottomOf="@id/price"
+                android:textStyle="bold"
+                card_view:layout_constraintStart_toStartOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/ic_metro"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_metro"
+                card_view:layout_constraintTop_toBottomOf="@id/text_under_price"
+                card_view:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="15dp"
+                />
+
+            <TextView
+                android:id="@+id/text_metro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                card_view:layout_constraintTop_toBottomOf="@id/text_under_price"
+                card_view:layout_constraintStart_toEndOf="@id/ic_metro"
+                android:text="@string/metro_name"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif"
+                android:textSize="18sp"
+                android:layout_marginStart="5dp"
+
+                />
+
+            <ImageView
+                android:id="@+id/ic_pedestrian"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_pedestrian"
+                card_view:layout_constraintTop_toBottomOf="@id/text_under_price"
+                card_view:layout_constraintStart_toEndOf="@id/text_metro"
+                android:layout_marginStart="15dp"
+
+                />
+
+            <TextView
+                android:id="@+id/pedestrian_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                card_view:layout_constraintTop_toBottomOf="@id/text_under_price"
+                card_view:layout_constraintStart_toEndOf="@id/ic_pedestrian"
+                android:text="@string/pedestrian_time"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif"
+                android:textSize="18sp"
+                android:layout_marginStart="5dp"
+                />
+
+            <TextView
+                android:id="@+id/place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:layout_constraintTop_toBottomOf="@id/ic_metro"
+                android:text="@string/place"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif"
+                android:textSize="18sp"
+                android:paddingBottom="10dp"
+                android:paddingStart="20dp"
+                android:layout_marginTop="5dp"/>
+
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>
