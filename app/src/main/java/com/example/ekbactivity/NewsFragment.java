@@ -44,6 +44,9 @@ public class NewsFragment extends Fragment {
         // переменной mListener присвоить MainActivity
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
         }
     }
 
@@ -102,7 +105,7 @@ public class NewsFragment extends Fragment {
 
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction();
+        void onNewsFragmentInteraction();
     }
 }
 

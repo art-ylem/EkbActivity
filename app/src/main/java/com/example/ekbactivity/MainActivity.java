@@ -11,7 +11,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 
 
-public class MainActivity extends AppCompatActivity implements MapFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements MapFragment.OnFragmentInteractionListener,
+        ToolsFragment.OnFragmentInteractionListener, BlankFragment.OnFragmentInteractionListener,
+        NewsFragment.OnFragmentInteractionListener, SettingsFragment.OnFragmentInteractionListener,
+        AccountFragment.OnFragmentInteractionListener{
 
     private DrawerLayout drawerLayout;
     private RecyclerView recyclerView;
@@ -42,25 +45,29 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnFra
                         menuItem.setChecked(true);
 
                         int id = menuItem.getItemId();
-                         
-
-                        if (id == R.id.nav_news) {
-                            frag(NewsFragment.newInstance());
+                        switch (menuItem.getItemId()){
+                            case R.id.nav_news:
+                                frag(NewsFragment.newInstance());
+                                break;
+                            case R.id.nav_map:
+                                frag(MapFragment.newInstance());
+                                break;
+                            case R.id.nav_blank:
+                                frag(BlankFragment.newInstance(Color.BLUE));
+                                break;
+                            case R.id.nav_tools:
+                                frag(ToolsFragment.newInstance());
+                                break;
+                            case R.id.nav_settings:
+                                frag(SettingsFragment.newInstance());
+                                break;
+                            case R.id.nav_account:
+                                frag(AccountFragment.newInstance());
+                                break;
                         }
 
-                        if (id == R.id.nav_map) {
-                            frag(MapFragment.newInstance());
-                        }
-
-                        if (id == R.id.nav_blank) {
-                            frag(BlankFragment.newInstance(Color.BLUE));
-                        }
-
-                        // close drawer when item is tapped
                         drawerLayout.closeDrawers();
 
-                        // Add code here to update the UI based on the item selected
-                        // For example, swap UI fragments here
 
                         return true;
                     }
@@ -69,15 +76,27 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnFra
     }
 
     @Override
-    public void mapFragmentButtonClick() {
+    public void onMapFragmentInteraction() {
+        frag(BlankFragment.newInstance(Color.GREEN));
+    }
 
-        Fragment blankFragment = BlankFragment.newInstance(Color.GREEN);
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+    @Override
+    public void onToolsFragmentInteraction() {
+    }
 
-        transaction.replace(R.id.container_for_fragment, blankFragment);
-        transaction.addToBackStack(null);
+    @Override
+    public void onBlankFragmentInteraction() {
+    }
 
-        transaction.commit();
+    @Override
+    public void onNewsFragmentInteraction() {
+    }
 
+    @Override
+    public void onSettingsFragmentInteraction() {
+    }
+
+    @Override
+    public void onAccountFragmentInteraction() {
     }
 }
