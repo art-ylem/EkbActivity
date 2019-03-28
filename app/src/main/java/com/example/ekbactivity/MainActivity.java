@@ -1,5 +1,6 @@
 package com.example.ekbactivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -9,15 +10,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 
-import java.util.ArrayList;
 
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MapFragment.OnFragmentInteractionListener {
 
     private DrawerLayout drawerLayout;
-    private ArrayList<News> newsArr = new ArrayList<>();
     private RecyclerView recyclerView;
 
+    private void frag(Fragment fragment){
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.container_for_fragment, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,19 +42,18 @@ public class MainActivity extends AppCompatActivity {
                         menuItem.setChecked(true);
 
                         int id = menuItem.getItemId();
+                         
 
                         if (id == R.id.nav_news) {
-                            // Create new fragment and transaction
-                            Fragment newFragment = NewsFragment.newInstance("", "");
-                            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                            frag(NewsFragment.newInstance());
+                        }
 
-// Replace whatever is in the fragment_container view with this fragment,
-// and add the transaction to the back stack
-                            transaction.replace(R.id.recycler_news, newFragment);
-                            transaction.addToBackStack(null);
+                        if (id == R.id.nav_map) {
+                            frag(MapFragment.newInstance());
+                        }
 
-// Commit the transaction
-                            transaction.commit();
+                        if (id == R.id.nav_blank) {
+                            frag(BlankFragment.newInstance(Color.BLUE));
                         }
 
                         // close drawer when item is tapped
@@ -61,6 +65,19 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
                 });
+
+    }
+
+    @Override
+    public void mapFragmentButtonClick() {
+
+        Fragment blankFragment = BlankFragment.newInstance(Color.GREEN);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.container_for_fragment, blankFragment);
+        transaction.addToBackStack(null);
+
+        transaction.commit();
 
     }
 }

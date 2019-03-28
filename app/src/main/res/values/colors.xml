@@ -10,4 +10,6 @@
     <color name="white">#fff</color>
     <color name="background_gray_pro">#2000</color>
     <color name="common_border_color">#fff</color>
+    <color name="orange">#EE5E00</color>
+
 </resources>

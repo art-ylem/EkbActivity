@@ -16,10 +16,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private Context context;
     private LayoutInflater mInflater;
 
-    public RecyclerViewAdapter(ArrayList<News> newsArray, NewsFragment context) {
+    public RecyclerViewAdapter(ArrayList<News> newsArray, Context context) {
         this.newsArray = newsArray;
-        this.context = new MainActivity();
-        this.mInflater = LayoutInflater.from(new MainActivity());
+        this.context = context;
+        this.mInflater = LayoutInflater.from(context);
     }
 
     @NonNull

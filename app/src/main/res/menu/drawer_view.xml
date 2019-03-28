@@ -5,6 +5,14 @@
             android:id="@+id/nav_news"
             android:icon="@drawable/ic_menu_news"
             android:title="@string/news" />
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/ic_menu_news"
+            android:title="@string/map" />
+        <item
+            android:id="@+id/nav_blank"
+            android:icon="@drawable/ic_menu_news"
+            android:title="@string/blank" />
 
     </group>
 </menu>
