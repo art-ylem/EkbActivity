@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnFra
                                 break;
                             case R.id.nav_map:
                                 frag(MapFragment.newInstance());
+
                                 break;
                             case R.id.nav_blank:
                                 frag(BlankFragment.newInstance(Color.BLUE));
@@ -77,7 +78,6 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnFra
 
     @Override
     public void onMapFragmentInteraction() {
-        frag(BlankFragment.newInstance(Color.GREEN));
     }
 
     @Override
