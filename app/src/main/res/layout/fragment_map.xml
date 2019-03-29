@@ -11,7 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/map"
-        >
+        android:enabled="true"
+        android:clickable="true"
+        android:apiKey="@string/google_maps_key"
+        android:focusable="true">
 
     </com.google.android.gms.maps.MapView>
 

@@ -20,4 +20,6 @@
     <string name="settings">Settings</string>
     <string name="account">Account</string>
     <string name="title_activity_maps">Map</string>
+    <string name="api_key">AIzaSyCwjqdSBv63pY5Qi3pVqlBy1cwVmklNohQ</string>
+
 </resources>
